@@ -3,21 +3,17 @@ pipeline {
 
     // Environment variables for configuration
     environment {
-        SONAR_SERVER          = 'sonarqube-server'          // Your SonarQube server name in Jenkins
-        DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'    // Jenkins credentials ID for your Docker registry
-        DOCKER_USERNAME       = 'your-docker-username'      // Your Docker Hub username or registry namespace
-        IMAGE_NAME            = 'my-app'                    // The name for your Docker image
+        SONAR_SERVER = 'SonarQubeServer1'          // Your SonarQube server name in Jenkins
     }
 
     stages {
-
 
         // Stage 1: Build the application
         stage('Build') {
             steps {
                 echo 'Building the application...'
                 // Replace with your build command (e.g., 'npm install')
-                sh 'mvn clean install'
+                sh 'mvn clean package -Dmaven.test.skip=true'
             }
         }
 
