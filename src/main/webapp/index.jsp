@@ -69,7 +69,7 @@ limitations under the License.
             </div>
         </div>
     </div>
-    <h4 class="header center">Recent Votes</h4>
+    <h4 class="header center">Recent Votes listing </h4>
     <ul class="container collection center">
         <c:forEach items="${recentVotes}" var="vote">
             <li class="collection-item avatar">
